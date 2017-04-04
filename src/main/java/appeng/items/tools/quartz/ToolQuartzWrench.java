@@ -71,7 +71,7 @@ public class ToolQuartzWrench extends AEBaseItem implements IAEWrench /* , ITool
 	@Override
 	public boolean doesSneakBypassUse( final ItemStack itemstack, final IBlockAccess world, final BlockPos pos, final EntityPlayer player )
 	{
-		return true;
+		return false;
 	}
 
 	@Override

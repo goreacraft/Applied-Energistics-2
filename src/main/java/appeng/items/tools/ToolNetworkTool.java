@@ -131,7 +131,7 @@ public class ToolNetworkTool extends AEBaseItem implements IGuiItem, IAEWrench /
 	@Override
 	public boolean doesSneakBypassUse( final ItemStack itemstack, final IBlockAccess world, final BlockPos pos, final EntityPlayer player )
 	{
-		return true;
+		return false;
 	}
 
 	public boolean serverSideToolLogic( final ItemStack is, final EntityPlayer p, final EnumHand hand, final World w, final BlockPos pos, final EnumFacing side, final float hitX, final float hitY, final float hitZ )

@@ -158,6 +158,6 @@ public class ToolMemoryCard extends AEBaseItem implements IMemoryCard
 	@Override
 	public boolean doesSneakBypassUse( final ItemStack itemstack, final IBlockAccess world, final BlockPos pos, final EntityPlayer player )
 	{
-		return true;
+		return false;
 	}
 }

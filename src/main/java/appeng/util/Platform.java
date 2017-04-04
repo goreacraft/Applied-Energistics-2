@@ -72,7 +72,9 @@ import net.minecraft.world.ILockableContainer;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.chunk.Chunk;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.FakePlayerFactory;
+import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;
@@ -411,7 +413,9 @@ public class Platform
 
 	public static boolean hasPermissions( final DimensionalCoord dc, final EntityPlayer player )
 	{
-		return dc.getWorld().canMineBlockBody( player, dc.getPos() );
+		BreakEvent breakEvent = new BreakEvent(dc.getWorld(),dc.getPos(),dc.getWorld().getBlockState(dc.getPos()), player );
+		MinecraftForge.EVENT_BUS.post(breakEvent);
+		return !breakEvent.isCanceled();
 	}
 
 	/*
